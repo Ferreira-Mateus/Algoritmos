@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aula 13</title>
+</head>
+
+<body>
+    <div id="botoes" style="text-align: center;">
+        <button onclick="fruta()" style="background: rgb(192, 41, 159);">Frutas</button>
+        <button onclick="legume()" style="background: greenyellow;">Legumes</button>
+        <button onclick="carne()" style="background: red;">Carnes</button>
+        <button onclick="gul()" style="background: turquoise;">Guloseimas</button>
+    
+    </div>
+
+    <div id="lista" style="text-align: center;">
+        <h3>Lista de compras</h3>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function fruta() {
+        lista.innerHTML += '<scan style="color: rgb(192, 41, 159);">Frutas</scan><br>';
+    }
+
+    function legume() {
+        lista.innerHTML += '<scan style="color: greenyellow">Legumes</scan><br>';
+    }
+
+    function carne() {
+        lista.innerHTML += '<scan style="color: red">Carnes</scan><br>';
+    }
+
+    function gul() {
+        lista.innerHTML += '<scan style="color: turquoise">Guloseimas</scan><br>';
+    }
+</script>

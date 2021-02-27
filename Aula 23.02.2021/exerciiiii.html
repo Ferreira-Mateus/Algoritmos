@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício aula</title>
+</head>
+
+<body>
+    <div id="herois" style="float: left; text-align: center; margin-left: 470px;">
+    Meus heróis favoritos são: <br>
+    <button onclick="heroi()">Ver heróis</button>
+    </div>
+
+    <div id="viloes" style="float: right; text-align: center; margin-right: 470px;">
+    Meus vilões favoritos são: <br>
+    <button onclick="vilao()">Ver vilões</button>
+    </div>
+</body>
+</html>
+
+<script>
+    function heroi() {
+        herois.innerHTML += "<br><br><b>Capitão América</b> <br> <i>Deadpool</i>"
+    }
+
+    function vilao() {
+        viloes.innerHTML += "<br><br><b>Thanos</b> <br> <i>Lord Voldemort</i>"
+    }
+</script>
