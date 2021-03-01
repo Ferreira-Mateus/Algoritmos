@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+
+<body>
+    Digite o ki base do guerreiro Sayajin:
+    <input id="ki" type="text" placeholder="Digite o ki"> <br>
+    <b>Transformar em...</b> <br> <br>
+
+    <button onclick="ssj()" style="background-color: darkorange; color: white;">SSJ</button>
+    <button onclick="ssj2()" style="background-color: blueviolet; color: white;">SSJ 2</button>
+    <button onclick="ssj3()" style="background-color: dodgerblue; color: white;">SSJ 3</button>
+
+    <h3>TRANSFORMAÇÃO</h3>
+    <div id="result"></div>
+
+</body>
+</html>
+
+<script>
+    function ssj() {
+        var nome_ssj = Text("SSJ");
+        var novo_ssj = Number(ki.value * 50);
+
+        result.innerHTML = (`Após se transformar em ${nome_ssj}, o ki desse Sayajin passa a ser de ${novo_ssj}`);
+
+        ki.value = '';
+    }
+
+    function ssj2() {
+        var nome_ssj2 = Text("SSJ2");
+        var novo_ssj2 = Number(ki.value * 50);
+
+        result.innerHTML = (`Após se transformar em ${nome_ssj2}, o ki desse Sayajin passa a ser de ${novo_ssj2}`);
+
+        ki.value = '';
+    }
+
+    function ssj3() {
+        var nome_ssj3 = Text("SSJ3");
+        var novo_ssj3 = Number(ki.value * 50);
+
+        result.innerHTML = (`Após se transformar em ${nome_ssj3}, o ki desse Sayajin passa a ser de ${novo_ssj3}`);
+
+        ki.value = '';
+    }
+</script>
