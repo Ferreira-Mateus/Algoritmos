@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complementar 3</title>
+</head>
+
+<body>
+    Digite a quantidade de m² de grama que serão necessários:
+    <input id="grama" type="text" placeholder="Quantidade de grama por m²"> <br> <br>
+
+    <button onclick="calcula()" style="background-color: olive; color: white;">Calcular</button>
+
+    <h3>Valores</h3>
+    <div id="valor"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcula() {
+        var esmeralda = Number(grama.value * 9.7) + 150;
+        var batatais = Number(grama.value * 8.7) + 200;
+        var sc = Number(grama.value * 10.7) + 100;
+
+        valor.innerHTML = (`Para ${grama.value} m² de grama, o nosso orçamento é: <br>
+        grama esmeralda = R$ 9,70 por m², frete = R$ 150,00, valor total = R$ ${esmeralda}. <br>
+        grama batatais = R$ 8,70 por m², frete = R$ 200,00, valor total = R$ ${batatais}. <br>
+        grama São Carlos = R$ 10,70 por m², frete = 100,00, valor total = R$ ${sc}.`);
+
+        grama.value = '';
+    }
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complementar 2</title>
+</head>
+
+<body>
+    Digite a quantidade de lâmpadas necessárias:
+    <input id="qtd" type="text" placeholder="Quantidade de lâmpadas"> <br>
+
+    Digite o valor médio da sua conta de luz:
+    <input id="conta_luz" type="text" placeholder="Valor conta de luz"> <br> <br>
+
+    <button onclick="calcular()" style="background-color: darkolivegreen; color: white;">Calcular</button>
+
+    <h3>Conclusões</h3>
+    <div id="result"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var inv = Number(qtd.value * 20.00);
+        var econ = Number(conta_luz.value - inv);
+        var ret = Number(inv / econ);
+
+        result.innerHTML = (`O seu investimento em lampadas será de R$ ${inv}. <br>
+        A sua economia na conta de luz sera de R$ ${econ}. <br>
+        Portanto, em ${ret} mes/meses seu investimento será retornado.`);
+
+        qtd.value = '';
+        conta_luz.value = '';
+    }
+</script>
