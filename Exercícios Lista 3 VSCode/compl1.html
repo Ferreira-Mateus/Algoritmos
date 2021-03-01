@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complementar 1</title>
+
+</head>
+<body>
+    Digite a quantidade de metros de cano para desentupir:
+    <input id="cano" type="text"> <br>
+
+    <button onclick="calculaD()" style="background-color: darkred; color: white;">Calcular valores</button>
+
+    <h3>VALORES</h3>
+    <div id="result"></div>
+
+</body>
+</html>
+
+<script>
+    function calculaD() {
+        var nicanor = Number(cano.value * 10) + 50;
+        var rotirute = Number(cano.value * 9.80) + 600;
+        var dif = (rotirute - nicanor);
+
+        result.innerHTML += (`O serviço pela <b>Nicanor</b> sai por R$ ${nicanor}.<br>
+        O serviço pela <b>Rotirute</b> sai por R$ ${rotirute}.<br>
+        A diferença dos valores é de R$ ${dif}.`);
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+
+<body>
+    Digite sua cidade natal:
+    <input id="cidade" type="text" placeholder="Cidade Natal"> <br>
+
+    Digite o ano em que você nasceu: 
+    <input id="nasc" type="text" placeholder="Ano de nascimento"> <br><br>
+
+    <button onclick="cadastro()">Cadastrar</button>
+
+    <div id="inf">
+        <h3>Informações: <br></h3>   
+    </div>    
+
+</body>
+</html>
+
+<script>
+    function cadastro() {
+        inf.innerHTML += (`Você nasceu na cidade de <b>${cidade.value}</b> em <u>${nasc.value}</u>.<br>`);
+        cidade.value = '';
+        nasc.value ='';
+    }
+
+</script>

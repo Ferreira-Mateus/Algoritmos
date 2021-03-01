@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+
+<body>
+    Qual o valor da passagem de ônibus:
+    <input id="bus" type="number" placeholder="Valor passagem"> <br>
+
+    Quantidade de viagens por mês:
+    <input id="qtd" type="number" placeholder="Quantidade viagens"> <br><br>
+
+    <button onclick="calculavt()" style="background-color: darkolivegreen; color: white;">Calcular VT</button>
+
+    <h3>CUSTO</h3>
+    <div id="custo"></div>
+
+</body>
+
+</html>
+
+<script>
+    function calculavt() {
+        var busao = Number(bus.value);
+        var qt = Number(qtd.value);
+        var total = (busao * qt);
+
+        custo.innerHTML = (`Você vai gastar <u>R$ ${total}</u> por mês com ônibus!`);
+
+        bus.value = '';
+        qtd.value = '';
+    }
+</script>
