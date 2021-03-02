@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+</head>
+
+<body>
+    <!-- Colcando imagem no topo da tela (a) -->
+    <div id="imagem">
+        <img style="height: 100px;"
+            src="https://myrp.com.br/wp-content/uploads/2020/03/Icones-Controle-de-Estoque-02-ok.png"
+            alt="Imagem estoque">
+    </div> <br>
+
+    <!-- Colocando frase em baixo da iamgem (b) -->
+    <div id="frase">
+        <b>Estoque! Guarde bem o que está contigo!</b>
+    </div> <br>
+
+    <!-- Entradas (c) -->
+    Nome do produto:
+    <input id="prod" type="text" placeholder="Nome do produto"> <br>
+
+    Unidade:
+    <input id="uni" type="text" placeholder="Unidade"> <br>
+
+    Quantidade em estoque:
+    <input id="qtd" type="number" placeholder="Quantidade estoque"> <br>
+
+    Valor de compra por unidade:
+    <input id="val_compra" type="number" placeholder="Valor de compra"> <br>
+
+    Valor de venda por unidade:
+    <input id="val_venda" type="number" placeholder="Valor de venda"> <br> <br>
+
+    <!-- Botão (d) -->
+    <button onclick="analisa()" style="background-color: darkolivegreen; color: white;">Analisar Estoque</button>
+    <button onclick="limpar()" style="background-color: crimson; color: white">Limpar Resultados</button>
+
+    <div id="resultado"></div>
+    <div id="result"></div>
+    <div style="color: g;"></div>
+</body>
+
+</html>
+
+<script>
+    function analisa() {
+        var total = Number(val_venda.value * qtd.value);
+        var lucro = Number(val_venda.value - val_compra.value);
+        var margem = Number((val_venda.value / val_compra.value) - 1) * 100;
+        var barras = Number(100 - lucro);
+
+        result.innerHTML += (`<br><b>Resultado da Análise</b> <br><br>
+        Você possuí um total de <b>${qtd.value}</b> <b>${uni.value}</b> de <b>${prod.value}</b>. <br>
+        Você tem um total de R$ <b>${total},00</b> em estoque de <b>${prod.value}</b>. <br>
+        Vai lucrar R$ <b style="color: blue">${lucro},00</b> em cada <b>${prod.value}</b> vendido. <br><br>
+        
+        Como comprou cada unidade por R$ <b>${val_compra.value},00</b> e vai vender por R$ <b>${val_venda.value},00</b>
+        , sua margem de lucro será de <b style="color: green">${margem}%</b>. <br>
+          
+        <div style="background-color: red; color: white; width: 50%; height: 40px; float: left;">Preço de compra: R$ <b>${val_compra.value},00</b></div>
+        <div style="background-color: green; color: white; width: 50%; height: 40px; float: left">R$ <b style="color: blue">${lucro},00</b> de lucro</div> <br>
+        
+        <b>Composição do Preço</b><br><br>`);
+
+        resultado.innerHTML += (`<br><img src="200.gif" alt="Gif de homem calculando" style="height: 80px;">`);
+
+        prod.value = '';
+        uni.value = '';
+        qtd.value = '';
+        val_compra.value = '';
+        val_venda.value = '';
+    }
+
+    function limpar() {
+        result.innerHTML = '';
+        resultado.innerHTML = '';
+    }
+</script>
