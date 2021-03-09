@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 20</title>
+</head>
+
+<body>
+    <h2>Verdades secretas!</h2>
+    <button id="bt_mostrar" onclick="mostrar_verdade()">Ver uma verdade</button>
+    <button id="bt_esconder" onclick="esconder_verdade()" style="display: none;">Esconder a verdade</button>
+    <br>
+
+    <div id="div_verdade" style="display: none;">
+        Você é escravo do que fala e senhor do que fala
+    </div>
+</body>
+</html>
+
+<script>
+    function mostrar_verdade() {
+        div_verdade.style.display = 'block'; 
+
+        bt_mostrar.style.display = 'none';
+
+        bt_esconder.style.display = 'block';
+        
+    }
+
+    function esconder_verdade() {
+        div_verdade.style.display = 'none';
+
+        bt_mostrar.style.display = 'block';
+
+        bt_esconder.style.display = 'none';
+
+    }
+</script>

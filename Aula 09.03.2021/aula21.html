@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 21</title>
+</head>
+
+<body>
+    <button id="bt1" onclick="mostrar_gato()">Mostrar Gato</button>
+    <button id="bt2" onclick="mostrar_sapo()">Mostrar Sapo</button>
+    <button id="bt3" onclick="mostrar_flor()">Mostrar Flor</button>
+
+    <br>
+    <br>
+
+    <img id="img1" src="https://images.freeimages.com/images/small-previews/389/mitze-1380778.jpg"
+     style="height: 100px; display: none;">
+    <img id="img2" src="https://images.freeimages.com/images/small-previews/e71/frog-1371919.jpg"
+     style="height: 100px; display: none;">
+    <img id="img3" src="https://images.freeimages.com/images/small-previews/a0c/daffodil-1378489.jpg"
+     style="height: 100px; display: none;">
+</body>
+</html>
+
+<script>
+    function mostrar_gato() {
+        img1.style.display = 'inline';
+    }
+    function mostrar_sapo() {
+        img2.style.display = 'inline';
+    }
+    function mostrar_flor() {
+        img3.style.display = 'inline';
+    }
+</script>
