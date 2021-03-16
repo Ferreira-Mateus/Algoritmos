@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+
+<body>
+    <input id="valor" type="text" placeholder="Insira o valor da passagem">
+
+    <select id="lista">
+        <option value="0">Selecione uma opção</option> 
+
+        <option value="1">Inteira</option>
+        <option value="0.5">Meia Passagem</option>
+        <option value="0.9">Cartão fidelidade</option>
+    </select>
+    <br>
+    <br>
+
+    <button onclick="calcula()">Calcular valor da passagem</button>
+
+    <div id="resultado" style="margin-top: 20px;"></div>
+</body>
+</html>
+
+<script>
+    function calcula() {
+        var val = valor.value
+        var list = lista.value;
+
+        resultado.innerHTML = `Você vai pagar R$${Number(val * list).toFixed(2)}`;
+    }
+</script>

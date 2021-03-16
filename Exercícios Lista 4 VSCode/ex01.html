@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+
+<body>
+    <h1>QUEM GUARDA TEM!!</h1>
+    <input type="number"; placeholder="Insira um valor" id="number"> <br><br>
+
+    <button onclick="retirar()">Retirar do Cofrinho</button>
+    <button onclick="depositar()">Depositar no Cofrinho</button> <br><br>
+
+    
+    <div id="val_conta"></div>
+
+</body>
+</html>
+
+<script>
+    var valor = 0;
+
+    function retirar() {
+        var n = Number(number.value);
+        valor = (valor - n);
+        val_conta.innerHTML = (`O valor que está guardado no seu cofrinho é de: R$${valor.toFixed(2)}`);
+    }
+
+    function depositar() {
+        var n = Number(number.value);
+        valor = (valor + n);
+        val_conta.innerHTML = (`O valor que está guardado no seu cofrinho é de: R$${valor.toFixed(2)}`);
+    }
+</script>

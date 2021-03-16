@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Váriaveis globais</title>
+
+</head>
+
+<body>
+    Você ja clicou <b id="b_vezes">0</b> vezes.<br><br>
+    <button onclick="clicar()">Click</button> 
+    <button onclick="limpar()">Limpar</button>
+    
+</body>
+</html>
+
+<script>
+    var vezes = 0; 
+
+    function clicar() {
+        vezes++;
+        b_vezes.innerHTML = vezes;
+    }
+    function limpar() {
+        vezes--;
+        b_vezes.innerHTML = vezes;
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <h2>Lista de Frutas</h2>
+    <select id="lista_frutas" style="text-align: center;" onchange="frutas()">
+        <option value="0">Selecione uma Fruta</option>
+        <option value="52">Maçã</option>
+        <option value="98">Banana</option>
+        <option value="57">Pêra</option>
+    </select> <br>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function frutas() {
+        resultado.innerHTML = (`A sua fruta preferida tem ${lista_frutas.value} calorias.`);
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 24</title>
+</head>
+    
+<body>
+    <h2>Combo Box</h2>
+    
+    <select id="lista_frutas">
+        <option value="0">Nenhum</option>
+        <option value="1">Maçã</option>
+        <option value="2">Pêra</option>
+        <option value="3">Banana</option>
+        <option value="4">Maracujá</option>
+    </select>
+
+    <h2>Pontos Cardeais</h2>
+
+    <select id="pontos_cardeais">
+        <option value="norte">Norte</option>
+        <option value="sul">Sul</option>
+        <option value="leste">Leste</option>
+        <option value="oeste">Oeste</option>
+    </select>
+
+    <h2>Humor</h2>
+
+    <select id="lista_humor" onchange="humor()">
+        <option value="1">Feliz</option>
+        <option value="2">Triste</option>
+        <option value="3">Com Raiva</option>
+        <option value="4">Com Medo</option>
+    </select>
+
+    <div id="resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function humor() {
+        resultado.innerHTML = (`Quando te chamar você vai dizer: ${lista_humor.value}`);
+    }
+</script>
+
+
