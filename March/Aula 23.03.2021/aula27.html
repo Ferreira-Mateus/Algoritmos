@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 27 - </title>
+</head>
+<body>
+    <h1>Voto</h1>
+
+    <input id="in_idade" type="text" placeholder="Digite sua idade" autofocus>
+    <button onclick="verifica_voto()">Votar</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function verifica_voto() {
+        var idade = Number(in_idade.value);
+
+        if (idade >= 16){
+            resultado.innerHTML = ('Você pode votar');
+        }else {
+            resultado.innerHTML = ('Você não pode votar');
+        }
+    }
+</script>

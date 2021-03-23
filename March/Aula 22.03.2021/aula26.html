@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 26 - If/Else</title>
+</head>
+
+<body>
+    <h1>CNH</h1>
+    <input id="pontos" type="number" placeholder="Número de Pontos" autofocus>
+    <button onclick="calcula_multa()">Calcular multa</button>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcula_multa() {
+        var pt = pontos.value;
+        var multa = Number(pt * 78);
+
+        if(pt >= 20) {
+            resultado.innerHTML = (`Multa de R$ ${multa.toFixed(2)} / Carteira SUSPENSA.`);
+        }else {
+            resultado.innerHTML = (`Multa de R$ ${multa.toFixed(2)}`);
+        }
+    }
+</script>

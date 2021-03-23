@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 07 - Lista If/Else</title>
+</head>
+
+<body>
+    <h1>Elevador</h1>
+    
+    <input id="man" type="number" placeholder="Digite a quantidade de homens" autofocus><br>
+    <input id="woman" type="number" placeholder="Digite a quantidade de mulheres"><br><br>
+
+    <button onclick="calcula_peso()">Analisar peso</button>
+
+    <div id="resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcula_peso() {
+        var p_total = (Number(man.value) * 80) + (Number(woman.value) * 60);
+
+        resultado.innerHTML = (`O peso total atual é: ${p_total}`);
+        if (p_total >= 800 && p_total <= 1000) {
+            resultado.innerHTML += ('<br><span style="color: blue;">Alguem precisa sair!!!</span>');
+        }else if(p_total > 1000){
+            resultado.innerHTML += ('<br><span style="color: red;">Alguem precisa sair!!!</span>')
+        }
+    }
+</script>

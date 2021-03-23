@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+<body>
+    <h1>Media aluno</h1>
+
+    <input id="nota1" type="text" placeholder="Digite a primeira nota" autofocus><br>
+    <input id="nota2" type="text" placeholder="Digite a segunda nota"><br><br>
+
+    <button onclick="verifica_aluno()">Avaliar</button>
+
+    <div id="resultado"></div>
+  
+</body>
+</html>
+
+<script>
+    function verifica_aluno() {
+        var media = ((Number(nota1.value) + Number(nota2.value)) / 2);
+
+        if (media >= 6) {
+            resultado.innerHTML = ('Parabéns, você passou!!!');
+        }else {
+            resultado.innerHTML = ('Infelizmente você reprovou!');
+        }
+    }
+</script>

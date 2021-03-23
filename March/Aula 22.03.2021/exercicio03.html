@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03 - Lista If/Else</title>
+</head>
+
+<body>
+    <h1>Pizza</h1>
+
+    <input id="pizza" type="number" placeholder="Digite o valor da pizza" autofocus><br>
+    <input id="amigos" type="number" placeholder="Digite o número de amigos"><br><br>
+
+    <button onclick="calcula_valor()">Calcular valor</button>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function calcula_valor() {
+        var val_amigos = Number(pizza.value) / Number(amigos.value);
+
+        resultado.innerHTML = (`R$ ${val_amigos.toFixed(2)} por pessoa.`);
+        if (val_amigos > 20) {
+            resultado.innerHTML += ('<br>Deu ruim!! Pizza muito cara!')
+        }
+    }
+</script>
