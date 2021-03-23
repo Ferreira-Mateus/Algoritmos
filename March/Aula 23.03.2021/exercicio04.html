@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    <h1>Temperatura</h1>
+
+    <input id="temperatura" type="text" placeholder="Digite a temperatura" autofocus>
+
+    <button onclick="verifica_temp()">Verificar temperatura</button>
+
+    <div id="resultado"></div>
+  
+</body>
+</html>
+
+<script>
+    function verifica_temp() {
+        var temp = Number(temperatura.value);
+
+        if (temp < 21.5) {
+            resultado.innerHTML = ('<span style="color: blue;">Frio!!!</span>');
+        }else {
+            resultado.innerHTML = ('<span style="color: red">Quente!!</span>');
+        }
+    }
+</script>
