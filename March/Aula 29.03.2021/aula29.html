@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 29 - Operador &&(e)</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Status aluno</h1>
+    <input id="in_media" type="number" placeholder="Digite a média do aluno" autofocus style="margin: 10px;"><br>
+    <input id="in_freq" type="number" placeholder="Digite a frequência do aluno" autofocus><br><br>
+
+    <button onclick="verifica_aluno()">Verificar</button>
+    
+</body>
+</html>
+
+<script>
+    function verifica_aluno() {
+        var media = Number(in_media.value);
+        var freq = Number(in_freq.value);
+
+        if (media >= 6 && freq >= 75) {
+            alert ('Aprovado!');
+
+        }else if (media > 10 || media < 0 || freq > 100 || freq < 0) {
+            alert ('Média ou frequência inválida');
+
+        }else {
+            alert ('Reprovado');
+        }
+
+        in_media.value = '';
+        in_freq.value = '';
+    }
+
+</script>

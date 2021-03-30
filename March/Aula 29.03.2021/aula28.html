@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 - Else If</title>
+</head>
+
+<body>
+    <input id="in_saldo" type="number" placeholder="Digite o saldo" autofocus>
+    <button onclick="verifica_perfil()">Verificar</button>
+    
+</body>
+</html>
+
+<script>
+    function verifica_perfil() {
+        saldo = Number(in_saldo.value);
+
+        if(saldo >= 5000){
+            alert ('Perfil de investidor');
+
+        }else if(saldo > 2000 && saldo < 5000){
+            alert ('Perfil acima da média');
+
+        }else if(saldo >= 0 && saldo <= 2000){
+            alert ('Perfil Saldo normal');
+
+        }else {
+            alert ('Perfil de Devedor');
+        }
+
+        in_saldo.value = '';
+    }
+</script>

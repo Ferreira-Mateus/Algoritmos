@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio - Yoshi</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Renda Familiar</h1>
+
+    <input id="in_renda" type="text" placeholder="Digite sua renda familiar">
+
+    <select id="adultos">
+        <ol>
+            <option value="">Quantidade de adultos</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </ol>
+    </select>
+
+    <button onclick="verifica_classe()">Verificar classe social</button>
+
+    <div id="resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function verifica_classe() {
+        var renda = Number(in_renda.value);
+        var adulto = Number(adultos.value)
+        var renda_fam = renda/adulto;
+
+        if (renda > 16263) {
+            resultado.innerHTML = ('<br><span style="color: green">CLASSE A</span><br><br><img src="https://media0.giphy.com/media/bwLI2JHYHpD4c3UosX/giphy.gif" alt="">');
+
+        }else if (renda > 5223) {
+            resultado.innerHTML = ('<br><span style="color: gray">CLASSE B</span><br><br><img src="https://media0.giphy.com/media/bwLI2JHYHpD4c3UosX/giphy.gif" alt="">');
+            
+
+        }else if (renda > 2166) {
+            resultado.innerHTML = ('<br><span style="color: blue">CLASSE C</span>');
+
+        }else {
+            resultado.innerHTML = ('<br><span style="color: red">CLASSE D e E</span>');
+        }
+
+        resultado.innerHTML += (`<br><br>A renda média de cada adulto é: <b>R$ ${renda_fam.toFixed(2)}</b>`)
+        
+        in_renda.value = '';
+        adultos.value = '';
+    }
+
+</script>

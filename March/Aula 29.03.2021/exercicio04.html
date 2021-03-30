@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Vegan</h1>
+
+    <select id="lista1">
+        <option value="1">Selecione o café da manha</option>
+        <option value="1">Ovos</option>
+        <option value="2">Leite de arroz</option>
+        <option value="1">Bacon</option>
+    </select>
+
+    <select id="lista2">
+        <option value="1">Selecione o almoço</option>
+        <option value="1">Bife</option>
+        <option value="2">Hamburguer de soja</option>
+        <option value="1">Frango grelhado</option>
+    </select>
+
+    <select id="lista3">
+        <option value="1">Selecione a janta</option>
+        <option value="2">Picanha de soja</option>
+        <option value="1">Cupim</option>
+        <option value="1">Coração</option>
+    </select><br><br>
+
+    <button onclick="verifica_vegan()">Sou vegano</button>
+
+</body>
+</html>
+
+<script>
+    function verifica_vegan() {
+        var vegan1 = lista1.value;
+        var vegan2 = lista2.value;
+        var vegan3 = lista3.value;
+
+        if (vegan1 == 2 && vegan2 == 2 && vegan3 == 2) {
+            alert ('Sim, você é vegano!')
+        }else {
+            alert ('Não, você não é vegano!')
+        }
+    }
+</script>
