@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 2 - Campo Minado</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    img {
+        height: 50px;
+    }
+
+    #imagens {
+        margin-top: 20px;
+        display: none;
+    }
+</style>
+
+<body>
+    <h1>Campo Minado</h1>
+
+    <button onclick="jogo()">Novo Jogo</button><br><br>
+
+    <div id="result">
+        Minas: <b id="qtd_minas">?</b> <br>
+        Explosões: <b id="qtd_exp">0</b><br>
+        Pontos: <b id="qtd_pts">0</b><br>
+    </div>
+
+    <div class="imgs" id="imagens">
+        <img id="imgb1" src="" onclick="bt_1()">
+        <img id="imgb2" src="" onclick="bt_2()">
+        <img id="imgb3" src="" onclick="bt_3()">
+        <br>
+        <img id="imgb4" src="" onclick="bt_4()">
+        <img id="imgb5" src="" onclick="bt_5()">
+        <img id="imgb6" src="" onclick="bt_6()">
+        <br>
+        <img id="imgb7" src="" onclick="bt_7()">
+        <img id="imgb8" src="" onclick="bt_8()">
+        <img id="imgb9" src="" onclick="bt_9()">
+        
+    </div>
+</body>
+</html>
+
+<script>
+
+    var minas = 0;
+    var explosao = 0;
+    var pontos = 0;
+
+    var b1 = 0;
+    var b2 = 0;
+    var b3 = 0;
+    var b4 = 0;
+    var b5 = 0;
+    var b6 = 0;
+    var b7 = 0;
+    var b8 = 0;
+    var b9 = 0;
+
+    var click1 = 0;
+    var click2 = 0;
+    var click3 = 0;
+    var click4 = 0;
+    var click5 = 0;
+    var click6 = 0;
+    var click7 = 0;
+    var click8 = 0;
+    var click9 = 0;
+
+    function jogo() {
+
+        explosao = 0;
+        qtd_exp.innerHTML = explosao;
+
+        pontos = 0;
+        qtd_pts.innerHTML = pontos;
+
+        click1 = 0;
+        click2 = 0;
+        click3 = 0;
+        click4 = 0;
+        click5 = 0;
+        click6 = 0;
+        click7 = 0;
+        click8 = 0;
+        click9 = 0;
+
+        b1 = parseInt(Math.random() * 2);
+        b2 = parseInt(Math.random() * 2);
+        b3 = parseInt(Math.random() * 2);
+        b4 = parseInt(Math.random() * 2);
+        b5 = parseInt(Math.random() * 2);
+        b6 = parseInt(Math.random() * 2);
+        b7 = parseInt(Math.random() * 2);
+        b8 = parseInt(Math.random() * 2);
+        b9 = parseInt(Math.random() * 2);
+
+        minas = (b1 + b2 + b3 + b4 + b5 + b6 + b7 + b8 + b9);
+        qtd_minas.innerHTML = minas;
+
+        imagens.style.display = 'block';
+
+        imgb1.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb2.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb3.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb4.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb5.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb6.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb7.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb8.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+        imgb9.src ="https://image0.flaticon.com/icons/png/128/84/84042.png"
+    }
+
+    function bt_1() {
+        if(click1 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b1 == 0) {
+            imgb1.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb1.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click1 = 1;
+        termino();
+    }
+
+    function bt_2() {
+        if(click2 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b2 == 0) {
+            imgb2.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb2.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click2 = 1;
+        termino();
+    }
+
+    function bt_3() {
+        if(click3 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b3 == 0) {
+            imgb3.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb3.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click3 = 1;
+        termino();
+    }
+
+    function bt_4() {
+        if(click4 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b4 == 0) {
+            imgb4.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb4.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click4 = 1;
+        termino();
+    }
+
+    function bt_5() {
+        if(click5 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b5 == 0) {
+            imgb5.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb5.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click5 = 1;
+        termino();
+    }
+    function bt_6() {
+        if(click6 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b6 == 0) {
+            imgb6.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb6.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click6 = 1;
+        termino();
+    }
+    function bt_7() {
+        if(click7 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b7 == 0) {
+            imgb7.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb7.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click7 = 1;
+        termino();
+    }
+    function bt_8() {
+        if(click8 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b8 == 0) {
+            imgb8.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb8.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click8 = 1;
+        termino();
+    }
+    function bt_9() {
+        if(click9 != 0){
+            alert ('Você ja clicou aqui');
+
+        }else if (b9 == 0) {
+            imgb9.src = "https://image0.flaticon.com/icons/png/128/61/61218.png";
+            pontos += 100;
+            qtd_pts.innerHTML = pontos;
+
+        }else {
+            imgb9.src = "https://image.flaticon.com/icons/png/128/112/112683.png";
+            explosao++;
+            qtd_exp.innerHTML = explosao;
+        }
+        click9 = 1;
+        termino();
+    }
+    
+    function termino() {
+        if (pontos == ((9 - minas) * 100)) {
+            alert("Parabéns!!!  Você encontrou todos os campos NÃO minados");
+            jogo();
+        }
+    }
+</script>

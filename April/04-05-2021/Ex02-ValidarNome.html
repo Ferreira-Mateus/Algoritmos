@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02-Validar Nome Minimo 10 Letras</title>
+</head>
+<body>
+    <h2>Validação Nome</h2>
+    <input type="text" id="ipt_nome"  onkeyup="analisar()" placeholder="Insira seu Email">
+    <br>
+    <div id="div_validar"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var ax_nome = ipt_nome.value;
+
+        if (ax_nome.length < 11) {
+        div_validar.innerHTML = `Nome deve ter até 10 Letras`;
+        }else{
+        div_validar.innerHTML = `Nome inválido`;   
+        }
+    }
+</script>

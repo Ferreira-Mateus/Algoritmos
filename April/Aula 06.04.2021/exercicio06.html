@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<body style="text-align: center;">
+    <h2>Lua</h2>
+
+    <button onclick="verifica()">Ver a lua</button>
+    <div id="result"></div>
+    
+</body>
+</html>
+
+<script>
+    function verifica() {
+        var lua = parseInt((Math.random()*32)+1);
+
+        if (lua >= 1 && lua <= 7) {
+            result.innerHTML = `<br>Dia ${lua} - Lua Nova<br><br>
+            <img id="img1" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png" alt="">`;
+            
+        } else if (lua >= 8 && lua <= 16 ) {
+            result.innerHTML = `<br>Dia ${lua} - Lua Cheia<br><br> <img id="img2" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png" alt="">`;
+
+        } else if (lua >= 17 && lua <= 22) {
+            result.innerHTML = `<br>Dia ${lua} - Lua Minguante<br><br> <img id="img3" src="https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png" alt="">`;
+
+        } else {
+            result.innerHTML = `<br>Dia ${lua} - Lua Crescente<br><br> <img id="img4" src="https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png" alt="">`;
+        } 
+    }
+</script>

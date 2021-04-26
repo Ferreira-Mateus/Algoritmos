@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01-Validacao email</title>
+</head>
+<!-- "<input> onkeyup" funciona igual um "<button> onclick" 
+porem ele irá mostrar o tempo todo sem precisar clicar em algo-->
+
+<body>
+    <h2>Validação email</h2>
+    Diga o Seu Email:<input type="text" id="ipt_email" onkeyup="analisar()" placeholder="Insira seu Email">
+    <br>
+
+    <div id="div_validar"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var ax_email = ipt_email.value.trim();
+
+        div_validar.innerHTML = '';
+
+        if (ax_email.indexOf('@') <= 0 || ax_email.indexOf('.com') <= 0 || ax_email.length < 7) {
+            div_validar.innerHTML += `Email Inválido - <b> NEGADO </b> <br>`;
+
+        }else{
+            div_validar.innerHTML += `<b> APROVADO </b> <br>
+            @ se encontra no character ${ax_email.indexOf('@')}     <br>
+            . se encontra no character ${ax_email.indexOf('.')}     <br>
+            <b>Email Válido</b>`;
+        }
+
+
+        // CTRL + :     
+        //     var val_email = ax_email.indexOf('@');
+        //     var val_ponto = ax_email.indexOf('.');
+
+        //     div_validar.innerHTML = '';
+
+        //     if (val_email < 0 || val_ponto < 0 || ax_email.length < 7) {
+        //         div_validar.innerHTML += `Email Inválido`;
+        //     } else {
+        //         div_validar.innerHTML += `Email Válido`;
+        //     } 
+
+
+
+
+        /* var val_email = ax_email.indexOf('@');
+        var val_ponto = ax_email.indexOf('.');
+    
+        div_validar.innerHTML = '';
+    
+        if (val_email < 0 || val_ponto < 0 || ax_email.length < 7) {
+        div_validar.innerHTML += `Email Inválido`;
+        } else {
+        div_validar.innerHTML += `Email Válido`;
+        } */
+    }
+</script>

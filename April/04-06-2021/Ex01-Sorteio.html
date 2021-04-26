@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01 Sorteio</title>
+</head>
+<body>
+    <h1>Sorteio Arredondamento</h1><br>
+    <button onclick="bt_sorteio()">0 à 0.9999</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function bt_sorteio() {
+        var sorteio = (Math.random());
+
+        div_mensagem.innerHTML =``
+        div_mensagem.innerHTML += `Numeros de 0 à 0.99999 <br>
+        o numero aleatório é : <b> ${sorteio} </b> <br>
+        Então:`
+        if(sorteio >= 0.5){
+            div_mensagem.innerHTML += ` Eu Arredondaria para 1`
+        }else{
+            div_mensagem.innerHTML += ` Eu Arredondaria para 0`
+        }
+    }
+</script>

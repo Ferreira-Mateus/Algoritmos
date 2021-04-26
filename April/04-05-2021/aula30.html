@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Operações com Textos</h2>
+Digite uma frase: <input type="text"  id="ipt_frase" onkeyup="analisar()">
+<br>
+<div id="div_result"></div>
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var ax_frase = ipt_frase.value;
+        div_result.innerHTML = '';
+
+        div_result.innerHTML += `Quantidade de caracteres? ${ax_frase.length} <br>`;
+
+        div_result.innerHTML += `Ela começa com "e"? ${ax_frase.startsWith('e')}<br>`;
+
+        div_result.innerHTML += `Ela começa com "e" ou "E"? ${ax_frase.startsWith('e') || 
+        ax_frase.startsWith('E')} <br>`;
+
+        div_result.innerHTML += `Começa com "amor"? ${ax_frase.startsWith('amor')} <br>`;
+
+        div_result.innerHTML += `Começa com "O amor constroe"? ${ax_frase.startsWith('O amor constroe')} <br>`;
+        
+        div_result.innerHTML += `Termina com "a" ? ${ax_frase.endsWith('a')}<br>`; 
+        
+        div_result.innerHTML += `termina com "preto" ? ${ax_frase.endsWith('preto')} <br>`;
+
+        div_result.innerHTML += `Qual e a terceira letra? ${ax_frase[2]} <br>`;
+
+        div_result.innerHTML += `Qual e a terceira letra? ${ax_frase[0]} <br>`;
+
+        div_result.innerHTML += `Aonde esta o primeiro @ ? ${ax_frase.indexOf('@')}<br>`;
+
+        div_result.innerHTML += `Aonde comeca o primeiro @ ? ${ax_frase.indexOf('kkk')}<br>`;
+        var ax_pos = ax_frase.indexOf('kkk');
+        if (ax_pos < 0){
+            div_result.innerHTML += `Onde começa o primeiro "kkk"? - não existe <br>`;
+        }else {
+            div_result.innerHTML += `Onde começa o primeiro "kkk"? ${ax_pos} <br>`;
+        }
+
+        div_result.innerHTML += `Como fica em maiusculo ${ax_frase.toUpperCase()} <br>`;
+
+        div_result.innerHTML += `Como fica em minusculo ${ax_frase.toLowerCase()} <br>`;
+        div_result.innerHTML += `A frase como ela é : ${ax_frase} <br>`;
+
+        } 
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07Cascata</title>
+</head>
+<body>
+    <h1>Digite sua frase</h1>
+    <input id="in_frase" onkeyup="verificar()" placeholder="Digite seu Texto" autofocus>
+    <button onclick="limpar()">Limpar</button>
+    <br><br>
+    <div id="result"></div>
+
+</body>
+</html>
+<script>
+    function verificar() {
+        var frase = in_frase.value;
+        result.innerHTML += `${frase[frase.length-1]} <br>`
+    }
+
+    function limpar(){
+        result.innerHTML = ``;
+        in_frase.value = ``;
+    }
+</script>

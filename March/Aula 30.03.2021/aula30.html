@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 30 - ||</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Picolé</h1>
+
+    <select id="lista_pi">
+            <option value="0">Selecione o sabor</option>
+            <option value="1">Morango</option>
+            <option value="2">Uva</option>
+            <option value="3">Limão</option>
+            <option value="4">Abacaxi</option>
+            <option value="5">Abacaxi</option>
+    </select>
+
+    <button onclick="compra()">Vai comprar?</button>
+</body>
+</html>
+
+<script>
+    function compra() {
+        if (lista_pi.value == 1 || lista_pi.value == 5) {
+            alert ('Sim, vou querer!')
+        }else {
+            alert ('Esquece, não vou tomar!')
+        }
+
+        lista_pi.value = '0';
+    }
+</script>

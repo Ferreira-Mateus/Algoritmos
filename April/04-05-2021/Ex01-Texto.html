@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex01-Validacao email</title>
+</head>
+<body>
+    <h2>Validação email</h2>
+    <input type="text" id="ipt_email"  onkeyup="analisar()" placeholder="Insira seu Email">
+    <br>
+    <div id="div_validar"></div>
+</body>
+</html>
+<script>
+    function analisar() {
+        var ax_email = ipt_email.value;
+        var val_email = ax_email.indexOf('@');
+        if (val_email < 0) {
+        div_validar.innerHTML = `Email Inválido`;
+        }else{
+        div_validar.innerHTML = `Email Válido`;   
+        }
+    }
+</script>

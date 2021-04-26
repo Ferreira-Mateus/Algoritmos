@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 30 - Textos</title>
+</head>
+
+<body>
+    <h2>Operando com textos</h2>
+    <!-- onkeyup indica o que vai acontecer logo após usar uma tecla qualquer -->
+    <input id="frase" placeholder="Digite alguma frase" onkeyup="analisar()"> <br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+    function analisar() {
+        var ax_frase = frase.value;
+        result.innerHTML = '';
+
+        result.innerHTML += `Quantidade de caracteres? ${ax_frase.length}<br>`;
+        result.innerHTML += `Ela comeca com "e"? ${ax_frase.startsWith('e')}<br>`;
+        result.innerHTML += `Ela comeca com "amor"? ${ax_frase.startsWith('amor')}<br>`;
+        result.innerHTML += `Ela comeca com "O amor constrói"? ${ax_frase.startsWith('O amor constrói')}<br>`;
+        result.innerHTML += `Ela comeca com "13"? ${ax_frase.startsWith('13')}<br>`;
+        result.innerHTML += `Ela termina com "o"? ${ax_frase.endsWith('o')}<br>`;
+        result.innerHTML += `Ela termina com "preto"? ${ax_frase.endsWith('preto')}<br>`;
+        result.innerHTML += `Qual é a 3ª letra? ${ax_frase[2]}<br>`;
+        result.innerHTML += `Qual é a 1ª letra? ${ax_frase[0]}<br>`;
+        result.innerHTML += `Qual é a última letra? ${ax_frase[ax_frase.length - 1]}<br>`;
+        result.innerHTML += `Qual está o 1º "@"? ${ax_frase.indexOf('@')}<br>`;
+        result.innerHTML += `Onde Começa o 1º "kkk"? ${ax_frase.indexOf('kkk')}<br>`;
+
+        var ax_pos = ax_frase.indexOf('kkk');
+
+        if (ax_pos < 0){
+            result.innerHTML += 'Onde Começa o 1º "kkk"? - NÃO EXISTE';
+        }else  {
+            result.innerHTML += `Onde Começa o 1º "kkk"? ${ax_pos}`;
+        }
+
+        result.innerHTML += `<br>Maiusculo ${ax_frase.toUpperCase('kkk')}<br>`;
+        result.innerHTML += `Minúsculo ${ax_frase.toLowerCase('kkk')}<br>`;
+    }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 31 - números aleatórios</title>
+</head>
+<body>
+    <h2>Números aleatórios</h2>
+    <button onclick="gerar24()">Números entre 2 e 4</button>
+    <button onclick="gerar_3_1()">Números entre -3 e -1</button>
+
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+    function gerar24() {
+        var resultado = parseInt(Math.random()*3)+2
+
+        result.innerHTML += `${resultado}<br>`;
+    }
+
+    function gerar_3_1() {
+        var ax_result = parseInt(Math.random()*3)+(-3)
+
+        result.innerHTML += `${ax_result}<br>`
+    }
+</script>

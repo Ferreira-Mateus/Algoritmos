@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="text-align: center;">
+    <div id="resultado">Você ja clicou <b>0</b> vezes</div>  <br>
+    <button onclick="clicar()">Clicar</button>
+</body>
+</html>
+
+<script>
+    var contador = 0;
+
+    function clicar() {
+        contador++;
+        resultado.innerHTML = `Você ja clicou <b>${contador}</b> vezes.`;
+
+        if (contador == 3 || contador == 4 || contador == 7 || contador == 10) {
+            alert (`Juliana gosta do número ${contador}`);
+        }
+    }
+</script>

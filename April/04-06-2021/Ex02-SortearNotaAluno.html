@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortear Nota Aluno</title>
+</head>
+<body>
+    <h1>Teste sua Sorte Aluno</h1>
+    <button onclick="bt_sortear()">Sortear Nota</button>
+
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function bt_sortear() {
+        var test = Number((Math.random() * 10) +0.01);
+
+        //div_mensagem.innerHTML = ``
+        div_mensagem.innerHTML += `sua nota aleatoria é ${test.toFixed(1)}<br>`
+    }
+</script>

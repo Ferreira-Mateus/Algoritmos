@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SorteioPremiado</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+</style>
+<body>
+    <input type="text" id="ipt_num"><br>
+    Digite seu numero da Sorte de 0 a 10 <br>
+    <button onclick="bt_sortear()">Teste sua Sorte</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var contador = 0;
+
+    function bt_sortear() {
+        var num = ipt_num.value
+
+        var num_aleatorio = (Math.random() * 11).toFixed(0)
+        if (num_aleatorio > 10) {
+            num_aleatorio = 10;
+        }
+
+        if (num > 10 || num < 0) {
+            alert('Erro Numero Inválido')
+        } else if (num == num_aleatorio) {
+            contador++;
+            div_mensagem.innerHTML += `<b>PARABÉNS</b>, QUE SORTE! <br>
+            seu numero : ${num}
+            numero da sorte : ${num_aleatorio}<br>          <!-- apenas para ver se o código esta rodando -->
+            Sorteios Realizados : ${contador}<br>`
+            contador = 0;
+        } else {
+            contador++;
+            div_mensagem.innerHTML += `<b>QUE AZAR</b>, mais sorte na proxima<br>
+            seu numero : ${num}
+            numero da sorte : ${num_aleatorio}<br>          <!-- apenas para ver se o código esta rodando -->
+            Sorteios Realizados : ${contador}<br>`
+        }
+    }
+</script>
