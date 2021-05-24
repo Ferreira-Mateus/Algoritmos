@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <input type="number" placeholder="Digite um número qualquer" autofocus> <br><br>
+    <input id="ipt_num" type="text" placeholder="Digite um número qualquer" autofocus> <br><br>
     <button onclick="cadastrar()">Cadastrar</button>
     <button onclick="historico()">Ver Histórico</button>
 
@@ -19,5 +19,38 @@
 </html>
 
 <script>
-        
+    var num = [];
+    
+    function cadastrar() {
+        var numero = ipt_num.value;
+        num.push(numero);
+        ipt_num.value = '';
+    }
+
+    function historico() {
+        var posicao = 0;
+        var maior = num[0];
+        var menor = num[0];
+        var soma = 0;
+
+        for (var i = 0; i < num.length; i++) {
+            var num_atual = Number(num[i]);
+            soma = soma + Number(num_atual);
+
+            if (num_atual > maior) {
+                maior = num_atual;
+
+            } else if (num_atual < menor) {
+                menor = num_atual;
+            } 
+            
+            result.innerHTML += `<br>${i + 1}° Número: ${num_atual}`;
+        }
+
+        result.innerHTML += `<br><br><br>Maior: ${maior}`;
+        result.innerHTML += `<br>Menor: ${menor}`;
+        result.innerHTML += `<br>Média: ${(soma / num.length).toFixed(1)}`;
+        result.innerHTML += `<br>Soma: ${soma}`;
+    }
+
 </script>

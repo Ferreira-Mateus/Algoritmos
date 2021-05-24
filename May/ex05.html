@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercicio 05</title>
+    <title>Ex05</title>
 </head>
-<body style="text-align: center;">
-    <h1>Cadastro e Consulta de alunos</h1>
 
-    <input id="in_aluno" type="text" placeholder="Nome do aluno"> <br><br>
-    <button onclick="cadastro()">Cadastrar</button>
-    <button onclick="consulta()">Consultar</button>
-
-    <div id="result"></div>
+<body>
+    <input placeholder="Cadastrar Aluno" id="ipt_aluno">
+    <br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <div id="msg"></div> <br>
+    <button onclick="pesquisar()">Pesquisar Aluno</button>
+    <div id="msg2"></div>
 </body>
-</html>
 
+</html>
 <script>
-    var alunos = [];
-    
-    function cadastro() {
-        alunos.push(in_aluno.value);
-        result.innerHTML = `<br>${alunos}<br>`;
+    alunos = []
+    function cadastrar() {
+        alunos.push(ipt_aluno.value);
+        msg.innerHTML += ${alunos[alunos.length -1]}
     }
 
-    function consulta() {
-        if (alunos.indexOf(in_aluno.value) > 0) {
-            alert ('Aluno ja cadastrado');
-
-        } else {
-            alert ('Aluno não cadastrado');
+    function pesquisar() {
+        var pesq = ipt_aluno.value;
+        var lugar = alunos.indexOf(pesq);
+        if (lugar >= 0){
+            msg2.innerHTML +=  'O Aluno encontrasse na posicao'
+            ${lugar + 1}
+        } else{
+            alert('Aluno Nao cadastrado') 
         }
     }
 </script>

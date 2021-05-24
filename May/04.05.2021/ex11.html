@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body style="text-align: center;">
+    <select id="lista_partida">
+        <option value="0">Selecione uma opção</option>
+        <option value="Vitória">Vitória</option>
+        <option value="Empate">Empate</option>
+        <option value="Derrota">Derrota</option>
+    </select>
+
+    <br>
+    <br>
+    <button onclick="cadastrar()">Cadastrar jogo</button>
+    <button onclick="analisa()">Analisar o Campeonato</button> <br><br>
+
+    <input id="ipt_jogo" type="text" placeholder="Qual jogo você quer saber o resultado" onkeyup="consulta()"> <br>
+    
+
+    <div id="result"></div>
+    
+</body>
+</html>
+
+<script>
+    var camp = [];
+    
+
+    function cadastrar() {
+        var lista = lista_partida.value;
+        camp.push(lista);
+    } 
+
+    function analisa() {
+        result.innerHTML = `<br>Até o jogo ${(camp.length-1) + 1}<br>`; 
+        
+
+        var v = 0;
+        var e = 0;
+        var d = 0;
+
+        for (var i = 0; i < camp.length; i++) {
+
+            if (camp[i] == "Vitória") {
+                v++;
+                
+            } else if (camp[i] == "Empate") {
+                e++;
+
+            } else if (camp[i] == "Derrota") {
+                d++;
+
+            }
+        }
+
+        var pontos = ((v*3) + e + (d*0));
+        var aprov = (pontos / (camp.length * 3)) * 100;
+
+        result.innerHTML += `<br>O time teve ${v} Vitórias, ${e} Empates e ${d} Derrotas.`
+        result.innerHTML += `<br>Pontuação total: ${pontos}`
+        result.innerHTML += `<br>Aproveitamento: ${aprov.toFixed(2)}%`
+
+    }
+
+    function consulta() {
+        var jogos = camp.length;
+        var partida = ipt_jogo.value-1;
+
+        if (partida <= jogos) {
+            result.innerHTML+= `<br>No ${partida + 1}º jogo, o time teve uma ${camp[partida]}`
+
+        } else {
+
+            alert('Jogo ainda não ocorreu')
+        }
+
+    } 
+</script>
