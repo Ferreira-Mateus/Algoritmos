@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04 - Repetição</title>
+</head>
+<body style="text-align: center;">
+
+    <h1>Amor</h1>
+    <input id="pessoa" type="text" placeholder="Digite a pessoa"><br>
+    <input id="qtd_amor" type="number" placeholder="Quanto você ama ela"><br><br>
+    <button onclick="repetir()">Expressar amor</button>
+
+    <div id="resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function repetir() {
+        var contador = 0;
+        var p = pessoa.value;
+        var qtd = Number(qtd_amor.value);
+
+        while (contador < qtd) {
+            resultado.innerHTML += `<br><b>${p}</b>, eu te amo! Sempre lembre disso`;
+            contador++;
+        }
+    }
+</script>

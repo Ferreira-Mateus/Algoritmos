@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex06 pares</title>
+</head>
+<body>
+    <button onclick="bt_par()">Eu S2 pares</button>
+    <button onclick="bt_impar()">Eu s2 Impares</button>
+    <div id="mensagem"></div>
+</body>
+</html>
+<script>
+    var contador = 0
+    function bt_par() {
+        while (contador < 100){
+            contador ++
+            if ((contador % 2) == 0){
+                mensagem.innerHTML += contador ;
+            }
+        }
+        contador = 0
+    }
+    function bt_impar(){
+        while(contador < 100){
+            contador ++
+            if ((contador %2) == 1){
+                mensagem.innerHTML += ${contador} 
+            }
+        }
+        mensagem.innerHTML += <br>
+        contador = 0
+    }
+</script>

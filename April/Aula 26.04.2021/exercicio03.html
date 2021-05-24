@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+
+<body>
+    <input id="in_choco" type="number" placeholder="Digite a quantidade de chocolates" autofocus><br>
+    
+
+    <button onclick="comprar()">Compra</button>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function comprar() {
+        var choco = Number(in_choco.value)
+
+        var result = (choco > 12 ? 
+            `O valor de sua compra foi ${choco * 2.5}` : `O valor de sua compra foi ${choco * 3}`);
+        resultado.innerHTML = result;
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+
+<body>
+    <input id="in_homens" type="number" placeholder="Digite a quantidade de homens" autofocus><br>
+    <input id="in_mulheres" type="number" placeholder="Digite a quantidade de mulheres"><br>
+
+
+    <button onclick="analisa()">Analisar peso</button>
+
+    <div id="resultado"></div>
+
+</body>
+
+</html>
+
+<script>
+    function analisa() {
+        var homens = (Number(in_homens.value) * 80);
+        var mulher = (Number(in_mulheres.value) * 60);
+
+        var peso = (homens + mulher);
+
+        var result = (peso <= 800 ?
+            `Este elevador suporta 800Kg, o peso estimado dessa lotação é de ${peso} <br> O elevador pode partir!`
+            : `Este elevador suporta 800Kg, o peso estimado dessa lotação é de ${peso} <br> Será necessário que alguem desça do elevador`);
+        resultado.innerHTML = result;
+    }
+</script>

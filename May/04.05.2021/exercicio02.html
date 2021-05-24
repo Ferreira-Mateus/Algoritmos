@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+
+    <button onclick="repetir()">Temp em SP</button>
+
+    <div id="result"></div>
+    
+</body>
+</html>
+
+<script>
+    function repetir() {
+        for (var temp = (-7); temp <= 39; temp++){
+            result.innerHTML += (`<br>${temp}°C`);
+        }
+    }
+</script>

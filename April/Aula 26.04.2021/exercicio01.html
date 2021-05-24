@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+
+<body>
+    <input id="in_saldo" type="number" placeholder="Digite seu saldo" autofocus><br>
+    <input id="in_debito" type="number" placeholder="Digite o valor a ser retirado"><br><br>
+
+    <button onclick="avalia()">Avaliar Saldo</button>
+
+    <div id="resultado"></div>
+    
+</body>
+</html>
+
+<script>
+    function avalia() {
+        saldo = Number(in_saldo.value);
+        debito = Number(in_debito.value);
+
+        var saldo_final = (saldo - debito);
+
+        var result = (saldo_final < 0 ? 
+            `<b style="color: red;">${saldo_final}</b>` : `<i style="color: blue;">${saldo_final}</i>`);
+        resultado.innerHTML = result;
+    }
+</script>

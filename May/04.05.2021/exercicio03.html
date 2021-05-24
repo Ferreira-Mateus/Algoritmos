@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+
+    <input id="men_valor" type="number" placeholder="Digite o menor valor"><br>
+    <input id="ma_valor" type="number" placeholder="Digite o maior valor"><br>
+    <input id="cresc" type="number" placeholder="Digite o ritimo de crescimento"><br><br>
+
+    <button onclick="repetir()">Contagem loka</button>
+
+    <div id="result"></div>
+    
+</body>
+</html>
+
+<script>
+    function repetir() {
+        var menor = Number(men_valor.value);
+        var maior = Number(ma_valor.value);
+        var crescimento = Number(cresc.value);
+
+        for (var num = maior; num >= menor; num-=crescimento) {
+            result.innerHTML += (`<br>${num}`)
+        }
+        
+    }
+</script>

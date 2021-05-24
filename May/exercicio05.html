@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05 - repetição</title>
+</head>
+
+<body>
+    <h3>Sorteito</h3>
+    <input type="number" id="ipt_num" placeholder="Quantos numeros quer sortear?"><br>
+    <button onclick="sortear()">Sorteio</button> <br>
+    <div id="result"></div>
+</body>
+
+</html>
+<script>
+
+    var contador = 0
+    function sortear() {
+        var qnt_numeros = Number(ipt_num.value)
+
+        while(contador < qnt_numeros){
+        var num_aleatorios = Number(Math.random() * 100);
+        result.innerHTML += `Numeros Sorteados: ${num_aleatorios.toFixed(0)}<br>`
+        contador++
+        }
+    }
+</script>

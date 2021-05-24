@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+
+<body>
+    <input id="in_aluno" type="text" placeholder="Digite o nome do aluno" autofocus>
+    <button onclick="adicionar()">Cadastrar</button>
+
+    <div id="result"></div>
+</body>
+</html>
+
+<script>
+    var alunos = [];
+
+    function adicionar() {
+
+        alunos.push(in_aluno.value);
+
+        in_aluno.value = '';
+        result.innerHTML = '';
+
+        for (var i = alunos.length; i > 0; i--) {
+            result.innerHTML += `${alunos[i-1]}<br>`;
+        }
+        
+
+    }
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+
+<body style="text-align: center;">
+    <h1>Notas</h1>
+
+    <input id="in_nota" type="number" placeholder="Digite a Nota" autofocus>
+    <button onclick="cadastro()">Cadastrar nota</button>
+    <br>
+    <br>
+    <input id="in_num1" type="number" placeholder="Primeiro numero"><br>
+    <input id="in_num2" type="number" placeholder="Segundo numero">
+    <br>
+    <br>
+    <button onclick="rever()">Rever as notas</button>
+
+    <div id="result"></div>
+
+</body>
+
+</html>
+
+<script>
+    var notas = [];
+
+    function cadastro() {
+        var nota = Number(in_nota.value)
+        notas.push(nota);
+        in_nota.value = '';
+    }
+
+    function rever() {
+        var nota1 = Number(in_num1.value);
+        var nota2 = Number(in_num2.value);
+        var tamanho = notas.length;
+
+        for (var i = 0; i < tamanho; i++) {
+            if (notas[i] >= nota1 && notas[i] <= nota2) {
+                result.innerHTML += `${notas[i]}<br>`;
+                
+            }
+        }
+
+    }
+
+
+
+
+</script>

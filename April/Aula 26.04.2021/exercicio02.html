@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 01</title>
+</head>
+
+<body>
+    <input id="in_nome" type="text" placeholder="Digite seu nome" autofocus>
+    <input id="in_idade" type="number" placeholder="Digite sua idade"><br><br>
+
+    <button onclick="avalia()">Avaliar Aluno</button>
+    
+</body>
+</html>
+
+<script>
+    function avalia() {
+        nome = (in_nome.value);
+        idade = Number(in_idade.value);
+
+        var result = (idade >= 18 ? 
+            `${nome} vamos tirar a CNH?` : `${nome} vai jogar Playstation!`);
+        alert(result);
+    }
+</script>
