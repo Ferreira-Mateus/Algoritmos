@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<style>
+    body {
+        display: grid;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+        margin: 0;
+    }
+
+    h1 {
+        position: relative;
+        top: -5vh;
+        text-align: center;
+        font-size: 4em;
+    }
+
+    #imgsForca {
+        position: relative;
+        top: -8vh;
+        height: 200px;
+        width: 300px;
+
+        margin: 0 auto;
+
+        background-image: url(https://afarms.github.io/forcagame/forca.png);
+        background-position: center;
+        background-size: 38%;
+        background-repeat: no-repeat;
+    }
+
+    .corpo {
+        position: absolute;
+
+        background-color: red;
+
+        display: none;
+    }
+
+    /* PARTES DO CORPO */
+
+    #cabeca {
+        top: 14vh;
+        left: 12.9vw;
+
+        height: 17px;
+        width: 17px;
+
+        border-radius: 50%;
+    }
+
+    #bracoE {
+        top: 17vh;
+        left: 14.2vw;
+
+        height: 25px;
+        width: 3px;
+
+        transform: rotate(-25deg);
+    }
+
+    #bracoD {
+        top: 17vh;
+        left: 12.5vw;
+
+        height: 25px;
+        width: 3px;
+
+        transform: rotate(25deg);
+    }
+
+    #tronco {
+        top: 17vh;
+        left: 12.9vw;
+
+        height: 30px;
+        width: 17px;
+
+    }
+
+    #pernaE {
+        top: 21.2vh;
+        left: 12.9vw;
+
+        height: 25px;
+        width: 3px;
+
+    }
+
+    #pernaD {
+        top: 21.3vh;
+        left: 13.9vw;
+
+        height: 25px;
+        width: 3px;
+
+    }
+
+    #txtFim {
+        position: relative;
+        font-weight: bold;
+
+        top: -12vh;
+        left: 4vw;
+        margin: 0 auto;
+    }
+
+    #forca {
+        overflow: auto;
+        width: auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .inLetra {
+        position: relative;
+        float: left;
+
+        height: 50px;
+        width: 50px;
+        margin: 2px;
+
+        text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .btnJogar {
+
+        width: 250px;
+        height: 65px;
+
+        border-radius: 10px;
+
+        background-color: rgb(29, 126, 93);
+
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+
+        outline: none;
+
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .btnJogar:hover {
+        background-color: rgb(10, 104, 72);
+    }
+
+    #txtDica {
+        position: relative;
+        top: -2vh;
+        width: auto;
+
+        text-align: center;
+
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+</style>
+
+<body onload="inicioJogo()">
+    <h1>JOGO DA FORCA</h1>
+
+    <div id="imgsForca">
+
+        <div id="cabeca" class="corpo"></div>
+        <div id="bracoE" class="corpo"></div>
+        <div id="bracoD" class="corpo"></div>
+        <div id="tronco" class="corpo"></div>
+        <div id="pernaE" class="corpo"></div>
+        <div id="pernaD" class="corpo"></div>
+
+    </div>
+
+    <span id="txtFim"></span>
+
+    <div id="forca">
+
+    </div>
+
+    <center>
+        <h2>DICA</h2>
+    </center>
+
+    <span id="txtDica"></span>
+
+    <br>
+
+    <center><button class="btnJogar" onclick="validaCampos()">JOGAR</button></center>
+
+</body>
+
+</html>
+
+<script>
+
+    var filmes = [
+        ['Rei Leão', 'Timão, pumba...']
+        , ['O iluminado', 'Jack Nicholson']
+        , ['Harry Potter', 'Pedra filosofal, Prisioneiro de Azkaban, Cálice de Fogo, Relíquias da Morte']
+        , ['Tubarão', 'Da medo e está no mar']
+        , ['Psicose', 'Transtorno mental caracterizado por uma desconexão da realidade']
+        , ['Matrix', 'Popularizou o bullet time']
+        , ['Rio', 'Retrata de forma animada a beleza silvestre do Rio de Janeiro ']
+        , ['Scarface', 'Tony Montana se torna o chefe do tráfico de drogas em Miami']
+        , ['intocáveis', 'Aqueles que não se tocam']
+        , ['Logan', 'Wolverine']
+    ];
+
+    var palavra;
+    var dica;
+
+    function inicioJogo() {
+        forca.innerHTML = '';
+
+        var random = parseInt(Math.random() * 10);
+
+        palavra = filmes[random][0].toUpperCase();
+
+        for (let i = 0; i < palavra.length; i++) {
+
+            if (palavra[i] == ' ' || palavra[i] == '-') {
+
+                var campoLetra = document.createElement('span');
+                campoLetra.className = 'inLetra';
+                campoLetra.id = `letra${i}`;
+
+                forca.appendChild(campoLetra);
+
+            } else {
+
+                var campoLetra = document.createElement('input');
+                campoLetra.maxLength = '1';
+                campoLetra.className = 'inLetra';
+                campoLetra.id = `letra${i}`;
+
+                forca.appendChild(campoLetra);
+
+            }
+
+            console.log(palavra[i][0]);
+
+        }
+
+        txtDica.innerHTML = `${filmes[random][1]}`;
+
+
+    }
+
+    var countErros = 0;
+
+    function validaCampos() {
+        var reds = 0;
+
+        for (let i = 0; i < palavra.length; i++) {
+
+            var input = document.getElementById(`letra${i}`);
+
+            var in_letra = input.value;
+
+            if (typeof (in_letra) == 'undefined') {
+                continue;
+            } else {
+                if (in_letra.toUpperCase() == palavra[i]) {
+
+                    input.style.fontColor = 'green';
+                    input.style.border = '2px solid green';
+
+                } else {
+
+                    input.style.fontColor = 'red';
+                    input.style.border = '2px solid red';
+
+                    reds++;
+
+                }
+            }
+
+        }
+
+        if (reds > 0) {
+
+            countErros++;
+
+            validaFimJogo(countErros);
+
+        } else {
+
+            if (countErros < 6) {
+
+                pernaD.style.display = 'none';
+                pernaE.style.display = 'none';
+                tronco.style.display = 'none';
+                bracoD.style.display = 'none';
+                bracoE.style.display = 'none';
+                cabeca.style.display = 'none';
+
+                imgsForca.style.backgroundSize = '60%';
+                imgsForca.style.backgroundImage = `URL(https://cdn.meutimao.com.br/_upload/forumtopico/2019/04/08/b34d173ddb931b6725b7738269748f66.jpg)`;
+
+            }
+
+        }
+
+    }
+
+    function validaFimJogo(countErros) {
+
+        if (countErros == 1) {
+            pernaD.style.display = 'block';
+        } else if (countErros == 2) {
+            pernaE.style.display = 'block';
+        } else if (countErros == 3) {
+            tronco.style.display = 'block';
+        } else if (countErros == 4) {
+            bracoD.style.display = 'block';
+        } else if (countErros == 5) {
+            bracoE.style.display = 'block';
+        } else if (countErros == 6) {
+            cabeca.style.display = 'block';
+
+            txtFim.innerHTML = 'Morreu enforcado!!';
+        }
+
+
+    }
+
+
+</script>
